@@ -1,0 +1,48 @@
+body {
+  background-color: #eee;
+}
+
+p {
+  font-size: 24px;
+  display:inline;
+}
+
+b .current-turn-flag {
+  color: red;
+}
+
+table {
+  display:block;
+  border-collapse: collapse;
+  margin-bottom: 5px;
+  border:none;
+}
+
+td {
+  margin:0;
+  padding:0;
+
+  width: 25px;
+  height: 25px;
+
+  border: 2px solid #004813;
+  background-color: #62BA79;
+
+  font-family: 'Open Sans', sans-serif;;
+  font-weight: bold;
+  font-size: 18px;
+  color: #111;
+
+  text-align: center;
+  vertical-align: middle;
+
+  cursor:pointer;
+}
+
+.gaming-cell[data-checked="1"] {
+  color:#790B21;
+}
+
+.gaming-cell[data-checked="2"] {
+  color: #0E105B;
+}
