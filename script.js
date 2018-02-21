@@ -1,4 +1,6 @@
 var turn_of_X = true;
+var maxrows = 25;
+var maxcols = 25;
 
 function wincondition(cell1,cell2,cell3,cell4,cell5) {
 
@@ -21,7 +23,7 @@ function checkforwin(check_row,check_col) {
     let c5;
   	let table=document.querySelector('.gaming-field-table');
   	//horisontal check
-    if((check_col-4+i>=0) && (+check_col+i<20)) {
+    if((check_col-4+i>=0) && (+check_col+i<maxcols)) {
   	c1=table.rows[check_row].cells[+check_col-4+i];
     c2=table.rows[check_row].cells[+check_col-3+i];
     c3=table.rows[check_row].cells[+check_col-2+i];
@@ -31,7 +33,7 @@ function checkforwin(check_row,check_col) {
      }
 
     //vertical check
-    if((check_row-4+i>=0) && (+check_row+i<20)) {
+    if((check_row-4+i>=0) && (+check_row+i<maxrows)) {
     c1=table.rows[check_row-4+i].cells[check_col];
     c2=table.rows[check_row-3+i].cells[check_col];
     c3=table.rows[check_row-2+i].cells[check_col];
@@ -41,7 +43,7 @@ function checkforwin(check_row,check_col) {
     }
 
     //diagonal right down check
-    if((check_row-4+i>=0) && (+check_row+i<20) && (check_col-4+i>=0) && (+check_col+i<20)) {
+    if((check_row-4+i>=0) && (+check_row+i<maxrows) && (check_col-4+i>=0) && (+check_col+i<maxcols)) {
     c1=table.rows[check_row-4+i].cells[check_col-4+i];
     c2=table.rows[check_row-3+i].cells[check_col-3+i];
     c3=table.rows[check_row-2+i].cells[check_col-2+i];
@@ -51,7 +53,7 @@ function checkforwin(check_row,check_col) {
     }
 
     //diagonal right up check
-    if((+check_row+4-i<20) && (check_row-i>=0) && (check_col-4+i>=0) && (+check_col+i<20)) {
+    if((+check_row+4-i<maxrows) && (check_row-i>=0) && (check_col-4+i>=0) && (+check_col+i<maxcols)) {
     c1=table.rows[+check_row+4-i].cells[check_col-4+i];
     c2=table.rows[+check_row+3-i].cells[check_col-3+i];
     c3=table.rows[+check_row+2-i].cells[check_col-2+i];
@@ -63,9 +65,9 @@ function checkforwin(check_row,check_col) {
 }
 
 let gaming_field_table = document.createElement("table");
-for (let i=0; i<20; i++) {
+for (let i=0; i<maxrows; i++) {
 	let gaming_field_row = document.createElement("tr");
-  for (let j=0; j<20; j++) {
+  for (let j=0; j<maxcols; j++) {
   	let gaming_field_cell = document.createElement("td");
     gaming_field_cell.className = 'gaming-cell';
     gaming_field_cell.dataset.checked = 0;

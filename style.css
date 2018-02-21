@@ -4,7 +4,27 @@ body {
 
 p {
   font-size: 24px;
-  display:inline;
+}
+
+.gaming-field {
+  display :inline-block;
+  float:left;
+}
+
+.turn-helper {
+  display: inline-block;
+  float: left;
+  margin-left: 15px;
+}
+
+.wrapper::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.rules {
+  margin-left: 20px;
 }
 
 b .current-turn-flag {
@@ -15,7 +35,6 @@ table {
   display:block;
   border-collapse: collapse;
   margin-bottom: 5px;
-  border:none;
 }
 
 td {
