@@ -80,20 +80,18 @@ for (let i=0; i<maxrows; i++) {
 gaming_field_table.classList.add('gaming-field-table');
 document.querySelector('.gaming-field').append(gaming_field_table);
 
-for (let i of document.getElementsByTagName('td')) {
-	i.onclick=function() {
-  	if (this.dataset.checked == 0) {
-  		if (turn_of_X) {
-      	this.textContent='X';
-        this.dataset.checked = 1;
-        document.querySelector('.current-turn-flag').textContent = 'O';
-      } else {
-      	this.textContent='O';
-        this.dataset.checked = 2;
-        document.querySelector('.current-turn-flag').textContent = 'X';
+document.querySelector('.gaming-field-table').onclick = function(event) {
+		let clickedcell = event.target;
+		if ((clickedcell.tagName != 'TD') || (clickedcell.dataset.checked > 0)) return;
+  	if (turn_of_X) {
+    	clickedcell.textContent='X';
+      clickedcell.dataset.checked = 1;
+      document.querySelector('.current-turn-flag').textContent = 'O';
+    } else {
+    	clickedcell.textContent='O';
+      clickedcell.dataset.checked = 2;
+      document.querySelector('.current-turn-flag').textContent = 'X';
       }
-      checkforwin(i.dataset.row,i.dataset.col);
-      turn_of_X = !turn_of_X;
-  	}
-  }
+    checkforwin(clickedcell.dataset.row,clickedcell.dataset.col);
+    turn_of_X = !turn_of_X;
 }
