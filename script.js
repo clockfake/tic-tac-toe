@@ -95,3 +95,7 @@ document.querySelector('.gaming-field-table').onclick = function(event) {
     checkforwin(clickedcell.dataset.row,clickedcell.dataset.col);
     turn_of_X = !turn_of_X;
 }
+
+document.querySelector('.refresh').onclick = function() {
+		location.reload();
+}

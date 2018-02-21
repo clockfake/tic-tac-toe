@@ -24,7 +24,18 @@ p {
 }
 
 .rules {
-  margin-left: 20px;
+  margin-left: 10px;
+}
+
+.refresh {
+  margin-left: 10px;
+  padding: 5px;
+
+  width: 80px;
+  height: 40px;
+
+  background-color: #333;
+  color: #ddd;
 }
 
 b .current-turn-flag {
