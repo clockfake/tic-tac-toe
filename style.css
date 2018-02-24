@@ -70,9 +70,9 @@ td {
 }
 
 .gaming-cell[data-checked="1"] {
-  color:#790B21;
+  background-image: url("X.png");
 }
 
 .gaming-cell[data-checked="2"] {
-  color: #0E105B;
+  background-image: url("O.png");
 }

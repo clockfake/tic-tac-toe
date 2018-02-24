@@ -8,7 +8,8 @@ function wincondition(cell1,cell2,cell3,cell4,cell5) {
   (cell1.dataset.checked == cell3.dataset.checked) &&
   (cell1.dataset.checked == cell4.dataset.checked) &&
   (cell1.dataset.checked == cell5.dataset.checked)) {
-  	let alertstr='Congratz, '+cell1.textContent+'-player, you won!';
+  	let alertstr = turn_of_X ? 'X' : 'O';
+		alertstr ='Congratz, ' + alertstr + '-player, you won!';
      alert(alertstr);
      location.reload();
      }
@@ -64,6 +65,7 @@ function checkforwin(check_row,check_col) {
   }
 }
 
+//initialisation
 let gaming_field_table = document.createElement("table");
 for (let i=0; i<maxrows; i++) {
 	let gaming_field_row = document.createElement("tr");
@@ -84,11 +86,9 @@ document.querySelector('.gaming-field-table').onclick = function(event) {
 		let clickedcell = event.target;
 		if ((clickedcell.tagName != 'TD') || (clickedcell.dataset.checked > 0)) return;
   	if (turn_of_X) {
-    	clickedcell.textContent='X';
       clickedcell.dataset.checked = 1;
       document.querySelector('.current-turn-flag').textContent = 'O';
     } else {
-    	clickedcell.textContent='O';
       clickedcell.dataset.checked = 2;
       document.querySelector('.current-turn-flag').textContent = 'X';
       }
