@@ -1,6 +1,6 @@
 var turn_of_X = true;
-var maxrows = 25;
-var maxcols = 25;
+var maxrows = 24;
+var maxcols = 24;
 
 function wincondition(cell1,cell2,cell3,cell4,cell5) {
 
@@ -71,7 +71,7 @@ for (let i=0; i<maxrows; i++) {
 	let gaming_field_row = document.createElement("tr");
   for (let j=0; j<maxcols; j++) {
   	let gaming_field_cell = document.createElement("td");
-    gaming_field_cell.className = 'gaming-cell';
+    gaming_field_cell.classList.add('gaming-cell');
     gaming_field_cell.dataset.checked = 0;
     gaming_field_cell.dataset.row=i;
     gaming_field_cell.dataset.col=j;

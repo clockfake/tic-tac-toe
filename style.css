@@ -7,12 +7,10 @@ p {
 }
 
 .gaming-field {
-  display :inline-block;
   float:left;
 }
 
 .turn-helper {
-  display: inline-block;
   float: left;
   margin-left: 15px;
 }
@@ -36,6 +34,7 @@ p {
 
   background-color: #333;
   color: #ddd;
+  border: none;
 }
 
 b .current-turn-flag {
@@ -75,4 +74,8 @@ td {
 
 .gaming-cell[data-checked="2"] {
   background-image: url("O.png");
+}
+
+tr:nth-child(2n-1) .gaming-cell:nth-child(2n), tr:nth-child(2n) .gaming-cell:nth-child(2n-1) {
+  background-color: #4FA564;
 }
