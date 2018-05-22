@@ -6,48 +6,34 @@ p {
   font-size: 24px;
 }
 
-.gaming-field {
-  float:left;
+.game__board {
+  display:block;
+  border-collapse: collapse;
+  margin-bottom: 15px;
 }
 
-.turn-helper {
-  float: left;
+.game__turn-helper {
   margin-left: 15px;
 }
 
-.wrapper::after {
-  content: "";
-  clear: both;
-  display: table;
-}
 
 .rules {
   margin-left: 10px;
 }
 
-.refresh {
+.game__to-prev-turn {
   margin-left: 10px;
-  padding: 5px;
+  padding: 12px;
 
-  width: 80px;
-  height: 40px;
 
   background-color: #333;
   color: #ddd;
   border: none;
+
+  cursor: pointer;
 }
 
-b .current-turn-flag {
-  color: red;
-}
-
-table {
-  display:block;
-  border-collapse: collapse;
-  margin-bottom: 5px;
-}
-
-td {
+.game__board-cell {
   margin:0;
   padding:0;
 
@@ -68,14 +54,14 @@ td {
   cursor:pointer;
 }
 
-.gaming-cell[data-checked="1"] {
-  background-image: url("X.png");
+.game__board-cell--X {
+  background-image: url("img/X.png");
 }
 
-.gaming-cell[data-checked="2"] {
-  background-image: url("O.png");
+.game__board-cell--O {
+  background-image: url("img/O.png");
 }
 
-tr:nth-child(2n-1) .gaming-cell:nth-child(2n), tr:nth-child(2n) .gaming-cell:nth-child(2n-1) {
+tr:nth-child(2n-1) .game__board-cell:nth-child(2n), tr:nth-child(2n) .game__board-cell:nth-child(2n-1) {
   background-color: #4FA564;
 }
