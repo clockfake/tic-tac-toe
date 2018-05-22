@@ -1,3 +1,3 @@
 # tic-tac-toe
-Little project made on pure JS
+Little project made on React
 First person who gets 5 in a row wins
