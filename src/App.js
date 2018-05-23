@@ -48,20 +48,26 @@ export default class App extends React.Component {
   }
 
   render() {
-    let message = '';
-    if (this.state.winner) {message = 'Winner is ' + (this.state.turnOfX? 'O':'X')} else {
-      message = 'Current turn is ' + (this.state.turnOfX? 'X':'O');
-    };
+
     return (
       <div className="game__board">
         <Board cells={this.state.cells} onClick={(row_index,col_index) => this.handleClick(row_index,col_index)} />
-        <div className="game__turn-helper">
-          {message}
+        <div className="game__panel">
+          <Message winner={this.state.winner} turnOfX={this.state.turnOfX} />
+          <button className="game__to-prev-turn" onClick={() => this.handlePrev()}>Go to previous turn</button>
         </div>
-        <button className="game__to-prev-turn" onClick={() => this.handlePrev()}>Go to previous turn</button>
       </div>
     );
   }
+}
+
+function Message(props) {
+  let message = props.winner ? 'Winner is' : 'Current turn is';
+  let boldPart = '';
+  if (props.winner && props.turnOfX || !props.winner && !props.turnOfX) {boldPart = 'O'} else {boldPart = 'X'};
+  return (<div className="game__turn-helper">
+            {message} <b>{boldPart}</b>
+          </div>);
 }
 
 function checkforwin(board,check_row,check_col) {
